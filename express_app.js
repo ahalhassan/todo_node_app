@@ -8,7 +8,7 @@ const server = express();
 const mongo_db_url = 'mongodb+srv://ahalhassan:mugtar@@dehia??@cluster0.ohfvy.mongodb.net/todos_db?retryWrites=true&w=majority'
 
 
-server.get('/student', function(request ,response){
+server.get('/holy', function(request ,response){
     request.status(200).json('All students has been given');
 });
 
