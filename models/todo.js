@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const todoSchema = mongoose.Schema({
-title: String,
+title: {
+     type:String,
+     require:true[true, 'T itle']
+},
 description: String,
 deadline: Date,
 inCompleted: Boolean
