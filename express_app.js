@@ -10,20 +10,23 @@ const server = express();
 // const mongo_db_url = '';
 
 server.use(express.json());
+server.get('/', function(request, response){
+    response.status(200).json({success: true, message: 'WELCOME, this is Ahalhassan todo node API'});
+})
 
-server.listen(4000, function(){
-    console.log("server has started to run in express");
-    mongoose.connect(process.env.ATLAS_URL)
-    .then(function(){
-        console.log("DB is connected")
-
- server.get('/todo',todoController.getAllTodo );
+server.get('/todo',todoController.getAllTodo );
 
 server.post('/todo',todoController.insertTodo);
 
 server.put('/todo',todoController.updateTodo);
 
 server.delete('/todo',todoController.deleteTodo);
+
+server.listen(4000, function(){
+    console.log("server has started to run in express");
+    mongoose.connect(process.env.ATLAS_URL)
+    .then(function(){
+        console.log("DB is connected")
 
     })
     .catch(function(error){
